@@ -17,7 +17,7 @@
   }
 
   &-headtitle{
-    color: $site-clr-white;
+    color: $site-clr-text-pri;
     width: 100%;
     padding: 10px 0;
 
@@ -28,10 +28,9 @@
   }
 
   &-box{
-    color: $site-clr-white;
+    color: $site-clr-text-pri;
     @include radial-gradient(#2F3C5E, #1B2540);
     width: 100%;
-    min-height: 650px;
 
     .row{
       @include flexbox-display-flex();
@@ -101,22 +100,32 @@
             text-align: right;
           }
 
-          .arrowup{
+          .arrowup,
+          .arrowdown{
             position: relative;
 
             &::before{
               content: "";
               width: 0;
               height: 0;
-              border-left: 8px solid transparent;
-              border-right: 8px solid transparent;
-              border-bottom: 8px solid $site-clr-green;
               @include border-radius(3px);
               position: absolute;
               right: 0;
               top: 50%;
               @include translateY(-50%);
             }
+          }
+
+          .arrowup::before{
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid $site-clr-green;
+          }
+
+          .arrowdown::before{
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid $site-clr-red;
           }
         }
 
@@ -197,7 +206,7 @@
             }
 
             h6{
-              color: #7F92B7;
+              color: $site-clr-text-sec;
             }
             p{
 
@@ -211,11 +220,96 @@
     .cryptoboxbody{
       height: 100%;
 
-      .chart{
-        padding: 25px;
-        height: 100%;
+      .cryptochart,
+      .cryptolist{
         border-top: 1px solid $site-clr-blue;
         border-bottom: 1px solid $site-clr-blue;
+      }
+
+      .cryptochart{
+        padding: 25px;
+      }
+
+      .cryptolist{
+        @include flexbox-display-flex();
+        @include flexbox-flex-wrap(wrap);
+        @include flexbox-align-items(center);
+        padding: 50px;
+
+        .listtable{
+          color: $site-clr-text-pri;
+          width: 100%;
+          font-size: 26px;
+          text-align: left;
+          border-collapse: collapse;
+
+          th, td{
+            font-weight: normal;
+
+            &:first-child{
+              padding-left: 0;
+            }
+
+            &:last-child{
+              text-align: right;
+              padding-right: 0;
+            }
+          }
+
+          thead{
+
+            th{
+              color: $site-clr-text-sec;
+              font-size: 16px;
+              padding: 0 5px;
+            }
+          }
+
+          tbody{
+
+            tr{
+
+              &:last-child td{
+                border-bottom: none;
+              }
+
+              td{
+                padding: 25px 5px;
+                border-bottom: 1px solid transparentize($site-brdr-light, 0.5);
+              }
+            }
+          }
+
+          .arrowup,
+          .arrowdown{
+            position: relative;
+            padding-left: 30px;
+
+            &::before{
+              content: "";
+              width: 0;
+              height: 0;
+              @include border-radius(3px);
+              position: absolute;
+              left: 0;
+              top: 50%;
+              @include translateY(-50%);
+            }
+          }
+
+          .arrowup::before{
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid $site-clr-green;
+          }
+
+          .arrowdown::before{
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid $site-clr-red;
+          }
+
+        }
       }
 
       .adbanner{

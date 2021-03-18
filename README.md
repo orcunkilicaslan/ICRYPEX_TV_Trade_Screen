@@ -2,6 +2,7 @@
 
 #### Web Public Area Frontend List
 - [Crypto_Detail](https://orcunkilicaslan.github.io/ICRYPEX_TV_Trade_Screen/html/Crypto_Detail.html)
+- [Crypto_List](https://orcunkilicaslan.github.io/ICRYPEX_TV_Trade_Screen/html/Crypto_List.html)
 
    
 
