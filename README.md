@@ -1,7 +1,7 @@
 # ICRYPEX TV Trade Screen
 
 #### Web Public Area Frontend List
-- [Home_Page](https://orcunkilicaslan.github.io/ICRYPEX_TV_Trade_Screen/html/Home_Page.html)
+- [Crypto_Detail](https://orcunkilicaslan.github.io/ICRYPEX_TV_Trade_Screen/html/Crypto_Detail.html)
 
    
 

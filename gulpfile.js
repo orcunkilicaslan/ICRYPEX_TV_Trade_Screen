@@ -30,8 +30,8 @@ const   gulp                        = require('gulp'),
 /* CUSTOM START */
 gulp.task('sass-custom', () => {
     return gulp.src([
-        folder_src_main + 'sass/custom/**/*.scss',
-        folder_src_main + 'sass/custom/**/*.sass'
+        folder_src_main + 'sass/**/*.scss',
+        folder_src_main + 'sass/**/*.sass'
     ])
         .pipe(gulppif(cfgprod.sourceMaps, sourcemaps.init()))
         .pipe(plumber())
@@ -57,7 +57,7 @@ gulp.task('sass-custom', () => {
 
 gulp.task('script-custom', () => {
     return gulp.src([
-        folder_src_main + 'script/custom/**/app.js'
+        folder_src_main + 'script/**/app.js'
     ])
         .pipe(plumber())
         .pipe(webpack({

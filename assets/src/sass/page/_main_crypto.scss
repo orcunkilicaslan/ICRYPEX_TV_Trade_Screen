@@ -1,0 +1,227 @@
+
+.main-crypto{
+  background-color: $site-clr-body-bg;
+  background-image: url(#{$path-img-url}/body/main_crypto_bg.jpg#{$cache-busting});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &-section{
+    @include flexbox-display-flex();
+    @include flexbox-flex-flow(column);
+    @include flexbox-justify-content(center);
+    @include flexbox-align-items(center);
+    width: 1240px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &-headtitle{
+    color: $site-clr-white;
+    width: 100%;
+    padding: 10px 0;
+
+    h1,h2,h3{
+      font-family: "LemonMilkMedium", sans-serif;
+      font-size: 26px;
+    }
+  }
+
+  &-box{
+    color: $site-clr-white;
+    @include radial-gradient(#2F3C5E, #1B2540);
+    width: 100%;
+    min-height: 650px;
+
+    .row{
+      @include flexbox-display-flex();
+      @include flexbox-flex-wrap(wrap);
+
+      .col{
+        @include flexbox-flex-basis(0);
+        @include flexbox-flex-grow(1);
+        max-width: 100%;
+      }
+
+      .col-auto{
+        @include flexbox-flex(0 0 auto);
+        width: auto;
+        max-width: 100%;
+      }
+    }
+
+    .cryptocurrency{
+      background-color: #273453;
+      //min-height: 76px;
+      padding: 15px 0;
+
+      .row{
+        .col,
+        .col-auto{
+          padding: 0 25px;
+        }
+      }
+
+      &-info{
+        @include flexbox-display-flex();
+        @include flexbox-flex-wrap(wrap);
+        @include flexbox-align-items(center);
+
+        > ul{
+          @include flexbox-display-flex();
+          @include flexbox-flex-wrap(wrap);
+          @include flexbox-align-items(center);
+
+          > li{
+            @include flexbox-flex(0 0 auto);
+            width: auto;
+            max-width: 100%;
+          }
+        }
+
+        .statsbig,
+        .statssmall{
+          @include flexbox-display-flex();
+          @include flexbox-flex-wrap(wrap);
+          @include flexbox-align-items(center);
+          @include flexbox-flex-basis(0);
+          @include flexbox-flex-grow(1);
+          max-width: 100%;
+
+          .pair{
+            @include flexbox-flex-basis(0);
+            @include flexbox-flex-grow(1);
+            max-width: 100%;
+          }
+          .price,
+          .perc{
+            @include flexbox-flex(0 0 auto);
+            width: auto;
+            max-width: 100%;
+            text-align: right;
+          }
+
+          .arrowup{
+            position: relative;
+
+            &::before{
+              content: "";
+              width: 0;
+              height: 0;
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-bottom: 8px solid $site-clr-green;
+              @include border-radius(3px);
+              position: absolute;
+              right: 0;
+              top: 50%;
+              @include translateY(-50%);
+            }
+          }
+        }
+
+        .statsbig{
+          @include flexbox-flex-basis(0);
+          @include flexbox-flex-grow(1);
+          max-width: 100%;
+          padding-right: 25px;
+
+          *{
+            font-size: 28px;
+          }
+
+          .pair{padding-right: 10px;}
+          .price,
+          .perc{
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          .price{}
+          .perc{
+            padding-right: 25px;
+          }
+        }
+
+        .statssmall{
+          @include flexbox-flex(0 0 auto);
+          width: auto;
+          max-width: 100%;
+          padding-left: 25px;
+          border-left: 1px solid transparentize($site-brdr-light, 0.5);
+
+          *{
+            font-size: 18px;
+          }
+
+          .pair{padding-right: 10px;}
+          .price,
+          .perc{
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          .price{}
+          .perc{
+            padding-right: 20px;
+          }
+        }
+      }
+
+      &-stats{
+        padding-left: 20px;
+        padding-right: 20px;
+        border-left: 1px solid transparentize($site-brdr-light, 0.5);
+
+        ul{
+          @include flexbox-display-flex();
+          @include flexbox-flex-wrap(wrap);
+          @include flexbox-align-items(center);
+
+          > li{
+            @include flexbox-flex(0 0 auto);
+            width: auto;
+            max-width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            *{
+              font-size: 16px;
+              font-weight: normal;
+            }
+
+            &:first-child{
+              padding-left: 0;
+            }
+
+            &:last-child{
+              padding-right: 0;
+            }
+
+            h6{
+              color: #7F92B7;
+            }
+            p{
+
+            }
+          }
+        }
+      }
+
+    }
+
+    .cryptoboxbody{
+      height: 100%;
+
+      .chart{
+        padding: 25px;
+        height: 100%;
+        border-top: 1px solid $site-clr-blue;
+        border-bottom: 1px solid $site-clr-blue;
+      }
+
+      .adbanner{
+        @include background-linear(#000000, #140d07, 90);
+      }
+    }
+  }
+
+}
