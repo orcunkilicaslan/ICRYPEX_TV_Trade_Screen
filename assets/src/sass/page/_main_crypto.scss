@@ -228,6 +228,83 @@
 
       .cryptochart{
         padding: 25px;
+
+        .ct-chart{
+          height: 100%;
+        }
+
+        .ct-series-a .ct-line {
+          stroke: #0a93ea;
+          stroke-width: 1px;
+        }
+
+        .ct-series-a .ct-point {
+          stroke: red;
+          stroke-width: 0px;
+          stroke-linecap: square;
+        }
+
+        .ct-horizontal {
+          display: none;
+        }
+
+        .ct-grid {
+          stroke: rgba(206, 206, 206, 0.2);
+          stroke-width: 1.0px;
+          stroke-dasharray: 0;
+          shape-rendering: crispedges;
+        }
+
+        .ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie {
+          fill: url(#linear);
+          fill-opacity: 1;
+        }
+
+        .ct-label {
+          color: rgba(117,140,163,0.7);
+          font-size: 16px;
+        }
+
+        .ct-label.ct-vertical.ct-start {
+          justify-content: flex-start;
+          bottom: -7px;
+          position: relative;
+        }
+
+        .ct-bar {
+          fill: none;
+          stroke-width: 18px;
+          shape-rendering: crispedges;
+        }
+
+        .ct-series-a .ct-bar, .ct-series-a .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+          stroke: #3e161c;
+        }
+
+        .ct-chart-bar {
+          width: 100% !important;
+        }
+
+        .ct-depth-left svg {
+          transform: rotate(180deg);
+        }
+
+        .ct-depth-left .ct-series-a .ct-bar, .ct-series-a .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+          stroke: #13332a;
+        }
+
+        #fc_frame, #fc_frame.fc-widget-normal {
+          width: 65px;
+          min-width: inherit;
+          overflow: hidden;
+          bottom: 60px;
+          right: 5px;
+          transform: scale(0.75);
+        }
+
+        #fc_frame.fc-widget-normal.h-open-container, #fc_frame.h-open-container {
+          transform: scale(1);
+        }
       }
 
       .cryptolist{

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=1360">
     <link rel="shortcut icon" href="../assets/img/icons/favicon.ico" type="image/x-icon" sizes="32x32" />
     <link id="css-custom-app" rel="stylesheet" href="../assets/dist/css/custom-app.css">
+    <script id="script-chartist" src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script id="script-moment" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
     <script id="script-custom-app" src="../assets/dist/js/custom-app.js"></script>
 </head>
 <body>
@@ -51,7 +53,18 @@
             <div class="cryptoboxbody">
                 <div class="row">
                     <div class="cryptochart col">
-                        <img src="../assets/img/others/Graph.png" />
+                        <div class="ct-chart"></div>
+                        <div style="width:0; height:0;">
+                            <svg>
+                                <defs>
+                                    <linearGradient id="linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#098cdf" stop-opacity="0.70" style=""></stop>
+                                        <stop offset="80%" stop-color="#023250" stop-opacity="0.5"></stop>
+                                        <stop offset="100%" stop-color="#023250" stop-opacity="0.1"></stop>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
                     </div>
                     <div class="rightside col-auto">
                         <img src="../assets/img/rightside/icrypex_right.jpg" />
@@ -62,6 +75,45 @@
     </section>
 </main>
 <!-- Crypto Start -->
+
+
+<script type="text/javascript">
+
+    var options = {
+        fullWidth: true,
+        fullHeight: true,
+        showArea: true,
+        showPoint: false,
+        lineSmooth: false,
+        low: 0,
+        axisX: {
+            showGrid: true,
+            showLabel: true,
+            divisor: 6,
+        },
+        axisY: {
+            ticks: [200, 250, 300, 350, 400],
+            low: 160,
+            onlyInteger: true,
+        },
+        chartPadding: {
+            top: 15,
+            right: 0,
+            left: 0,
+            bottom: 0
+        },
+    };
+
+    var data = {
+        labels: [1, 2, 3, 4, 5, 6, 7, 8],
+        series: [
+            [5, 9, 7, 8, 5, 3, 5, 4]
+        ]
+    };
+
+    new Chartist.Line('.ct-chart', data, options);
+
+</script>
 
 </body>
 </html>
